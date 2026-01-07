@@ -96,41 +96,66 @@ const about: About = {
     title: "Work Experience",
     experiences: [
       {
-        company: "Meijer & Knijnenberg",
-        timeframe: "2023 - Present",
-        role: "Web Developer & SaaS Developer",
+        company: "Antler",
+        timeframe: "Sep 2025 - Dec 2025",
+        role: "Founder in Residence",
         achievements: [
           <>
-            Developed a custom website featuring a job board and administrative upload portal,
-            enabling easy job listing management and candidate applications.
+            Selected for Antler ONE (120 founders from 7,500+ applicants) to build innovative technology ventures in Berlin.
           </>,
           <>
-            Designed and developed Ask For Sara, an AI-powered voice agent SaaS application that handles
-            HubSpot CRM administration through natural language conversations, automating data entry and CRM management.
+            Built and iterated early-stage MVPs using Supabase, Python, TypeScript, and OpenAI Agent Platform.
           </>,
           <>
-            Created an intuitive interface for non-technical staff to manage job postings without
-            technical intervention, streamlining the recruitment workflow.
+            Worked closely with ex-exit founders and VC investors, learning founder-led sales and customer discovery methodologies.
           </>,
         ],
         images: [],
       },
       {
-        company: "Freelance",
-        timeframe: "2020 - Present",
-        role: "Workflow Automation Specialist & SaaS Developer",
+        company: "Giroscope",
+        timeframe: "Jan 2025 - Dec 2025",
+        role: "Founder",
         achievements: [
           <>
-            Designed and built full-stack SaaS applications, including AI-powered voice agents and
-            automation platforms for business process optimization.
+            Founded and built a portfolio analysis tool for retail investors, designing and shipping the MVP solo.
           </>,
           <>
-            Developed custom automation solutions for various clients using n8n, reducing
-            operational overhead and improving efficiency.
+            Scaled to ~500 users, owning product, engineering, and iteration end-to-end using PostgreSQL, FastAPI, React, and GCP.
           </>,
           <>
-            Created Instagram automation tools and CRM integrations that helped businesses
-            scale their operations.
+            Gained hands-on experience with early traction, retention dynamics, and real-world distribution constraints.
+          </>,
+        ],
+        images: [],
+      },
+      {
+        company: "Optiver",
+        timeframe: "Aug 2022 - Dec 2024",
+        role: "Mid Office Analyst",
+        achievements: [
+          <>
+            Performed trade, fee, and brokerage reconciliations across high-volume trading activity in a fast-paced environment.
+          </>,
+          <>
+            Ensured accuracy and integrity of post-trade processes, working closely with traders and engineers to resolve breaks and improve workflows.
+          </>,
+          <>
+            Started as Mid Office Assistant (part-time) and was promoted to Mid Office Analyst (full-time) after demonstrating strong performance.
+          </>,
+        ],
+        images: [],
+      },
+      {
+        company: "Tesla",
+        timeframe: "Jan 2022 - Jul 2022",
+        role: "Data Intern",
+        achievements: [
+          <>
+            Worked on data analysis and automation projects to support Tesla's operations in Amsterdam.
+          </>,
+          <>
+            Gained experience with data pipelines and business intelligence tools in a high-growth environment.
           </>,
         ],
         images: [],
@@ -139,15 +164,15 @@ const about: About = {
   },
   studies: {
     display: true, // set to false to hide this section
-    title: "Studies",
+    title: "Education",
     institutions: [
       {
-        name: "University of Jakarta",
-        description: <>Studied software engineering.</>,
+        name: "Vrije Universiteit Amsterdam",
+        description: <>MSc, Econometrics & Operations Research (2021 - 2023)</>,
       },
       {
-        name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
+        name: "Vrije Universiteit Amsterdam",
+        description: <>Minor, Econometrics (2020 - 2021)</>,
       },
     ],
   },
