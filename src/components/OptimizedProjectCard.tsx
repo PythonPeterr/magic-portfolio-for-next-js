@@ -9,8 +9,10 @@ import {
   SmartLink,
   Text,
 } from "@once-ui-system/core";
+import Image from "next/image";
+import { useState, useEffect } from "react";
 
-interface ProjectCardProps {
+interface OptimizedProjectCardProps {
   href: string;
   priority?: boolean;
   images: string[];
@@ -21,7 +23,7 @@ interface ProjectCardProps {
   link: string;
 }
 
-export const ProjectCard: React.FC<ProjectCardProps> = ({
+export const OptimizedProjectCard: React.FC<OptimizedProjectCardProps> = ({
   href,
   priority = false,
   images = [],
@@ -31,25 +33,59 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   avatars,
   link,
 }) => {
+  const [isHydrated, setIsHydrated] = useState(false);
+
+  useEffect(() => {
+    // Defer carousel initialization until after first paint
+    const timer = setTimeout(() => {
+      setIsHydrated(true);
+    }, 50);
+    return () => clearTimeout(timer);
+  }, []);
+
   // Optimize images array to use correct format
   const optimizedImages = images.map(img => {
-    // Convert .png to .webp if webp version exists (for optimized projects)
-    if ((img.includes('giroscope') || img.includes('meijer-knijnenberg') || img.includes('n8n-crm-automation')) && img.endsWith('.png')) {
+    if ((img.includes('giroscope') || img.includes('meijer-knijnenberg')) && img.endsWith('.png')) {
       return img.replace('.png', '.webp');
     }
     return img;
   });
 
+  const firstImage = optimizedImages[0];
+
   return (
     <Column fillWidth gap="m">
-      <Carousel
-        sizes="(max-width: 960px) 100vw, 960px"
-        items={optimizedImages.map((image, index) => ({
-          slide: image,
-          alt: title,
-          priority: priority && index === 0, // Only prioritize first image of priority card
-        }))}
-      />
+      {/* Show static image first for LCP, then replace with carousel */}
+      {!isHydrated && firstImage ? (
+        <div style={{
+          position: 'relative',
+          width: '100%',
+          aspectRatio: '16/9',
+          overflow: 'hidden',
+          borderRadius: '12px'
+        }}>
+          <Image
+            src={firstImage}
+            alt={title}
+            fill
+            priority={priority}
+            quality={85}
+            style={{
+              objectFit: 'cover',
+            }}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 960px"
+          />
+        </div>
+      ) : (
+        <Carousel
+          sizes="(max-width: 960px) 100vw, 960px"
+          items={optimizedImages.map((image, index) => ({
+            slide: image,
+            alt: title,
+            priority: priority && index === 0,
+          }))}
+        />
+      )}
       <Flex
         s={{ direction: "column" }}
         fillWidth

@@ -100,9 +100,8 @@ export default function Home() {
           </RevealFx>
         </Column>
       </Column>
-      <RevealFx translateY="16" delay={0.3} speed="fast">
-        <Projects range={[1, 1]} />
-      </RevealFx>
+      {/* Remove RevealFx from first project to improve LCP */}
+      <Projects range={[1, 1]} />
       {routes["/blog"] && (
         <Column fillWidth gap="24" marginBottom="l">
           <Row fillWidth paddingRight="64">

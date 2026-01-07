@@ -5,7 +5,7 @@ const person: Person = {
   firstName: "Jesse",
   lastName: "Verbeek",
   name: `Jesse Verbeek`,
-  role: "Founder, Data, AI & Automation Enthusiast",
+  role: "Founder & Full-Stack Developer",
   avatar: "/images/avatar.jpg",
   email: "jeverbeek6@gmail.com",
   location: "Europe/Amsterdam", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
@@ -15,13 +15,19 @@ const person: Person = {
 const newsletter: Newsletter = {
   display: true,
   title: <>Subscribe to {person.firstName}'s Newsletter</>,
-  description: <>My weekly newsletter about creativity and engineering</>,
+  description: <>Insights on building SaaS products, AI automation, and founder lessons</>,
 };
 
 const social: Social = [
   // Links are automatically displayed.
   // Import new icons in /once-ui/icons.ts
   // Set essentials: true for links you want to show on the about page
+  {
+    name: "GitHub",
+    icon: "github",
+    link: "https://github.com/PythonPeterr",
+    essential: true,
+  },
   {
     name: "LinkedIn",
     icon: "linkedin",
@@ -78,7 +84,7 @@ const about: About = {
   },
   calendar: {
     display: true,
-    link: "https://cal.com",
+    link: "https://cal.com/jesse-verbeek-g5iiyz/jesse-intro-call-via-jverbeek-portfolio-website",
   },
   intro: {
     display: true,
