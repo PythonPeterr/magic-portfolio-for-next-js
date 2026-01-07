@@ -101,7 +101,7 @@ export default function Home() {
         </Column>
       </Column>
       {/* Add spacing so first project only appears after scrolling */}
-      <Column fillWidth paddingTop="xl" style={{ minHeight: "60vh" }}>
+      <Column fillWidth paddingTop="xl" style={{ minHeight: "90vh" }}>
         <Projects range={[1, 1]} />
       </Column>
       {routes["/blog"] && (
